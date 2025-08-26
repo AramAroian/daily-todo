@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OfficeApp
+  xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:type="MessageReadCommandSurface">
+  
+  <Id>f3c2c540-0a8f-4a1e-b9bb-123456789abc</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>Your Company</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="My CRM Add-in"/>
+  <Description DefaultValue="Create tickets from Outlook emails"/>
+  <IconUrl DefaultValue="https://yourdomain.com/assets/icon-32.png"/>
+  <HighResolutionIconUrl DefaultValue="https://yourdomain.com/assets/icon-64.png"/>
+  <SupportUrl DefaultValue="https://yourdomain.com/support"/>
+
+  <!-- Outlook host -->
+  <Hosts>
+    <Host Name="Mailbox"/>
+  </Hosts>
+
+  <!-- Permissions -->
+  <Requirements>
+    <Sets DefaultMinVersion="1.1">
+      <Set Name="Mailbox"/>
+    </Sets>
+  </Requirements>
+  <Permissions>ReadItem</Permissions>
+
+  <!-- Ribbon button -->
+  <ExtensionPoint xsi:type="MessageReadCommandSurface">
+    <OfficeTab id="TabDefault">
+      <Group id="msgReadGroup">
+        <Label resid="groupLabel"/>
+        <Control xsi:type="Button" id="msgReadOpenPaneButton">
+          <Label resid="paneButtonLabel"/>
+          <Supertip>
+            <Title resid="paneButtonTitle"/>
+            <Description resid="paneButtonDesc"/>
+          </Supertip>
+          <Icon>
+            <bt:Image size="16" resid="icon16"/>
+            <bt:Image size="32" resid="icon32"/>
+            <bt:Image size="80" resid="icon80"/>
+          </Icon>
+          <Action xsi:type="ShowTaskpane">
+            <SourceLocation resid="taskpaneUrl"/>
+          </Action>
+        </Control>
+      </Group>
+    </OfficeTab>
+  </ExtensionPoint>
+
+  <!-- Localized strings -->
+  <Resources>
+    <bt:Images>
+      <bt:Image id="icon16" DefaultValue="https://yourdomain.com/assets/icon-16.png"/>
+      <bt:Image id="icon32" DefaultValue="https://yourdomain.com/assets/icon-32.png"/>
+      <bt:Image id="icon80" DefaultValue="https://yourdomain.com/assets/icon-80.png"/>
+    </bt:Images>
+    <bt:Urls>
+      <bt:Url id="taskpaneUrl" DefaultValue="https://localhost:3000/taskpane.html"/>
+    </bt:Urls>
+    <bt:ShortStrings>
+      <bt:String id="groupLabel" DefaultValue="CRM"/>
+      <bt:String id="paneButtonLabel" DefaultValue="Create Ticket"/>
+      <bt:String id="paneButtonTitle" DefaultValue="Send to CRM"/>
+    </bt:ShortStrings>
+    <bt:LongStrings>
+      <bt:String id="paneButtonDesc" DefaultValue="Send this email to CRM as a ticket."/>
+    </bt:LongStrings>
+  </Resources>
+</OfficeApp>

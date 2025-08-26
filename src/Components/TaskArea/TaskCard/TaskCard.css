@@ -1,0 +1,115 @@
+.task-card {
+  display: flex;
+  flex-direction: column;
+  /* stack content and actions */
+  gap: 0.75rem;
+  /* space between content & actions */
+  padding: 1rem 1.25rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 4px 20px rgba(0, 255, 200, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.active-task {
+  box-shadow: 0px 0px 10px cyan !important;
+}
+
+.task-card,
+.task-card * {
+  box-sizing: border-box;
+}
+
+.task-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(0, 255, 200, 0.25);
+}
+
+.task-card:hover .task-actions {
+  opacity: 1;
+  transform: translateY(0);
+  /* move into place */
+}
+
+.task-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.task-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  opacity: 0;
+  transform: translateY(5px);
+  /* start slightly lower */
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.task-title {
+  font-family: 'Inter', sans-serif;
+  /* or JetBrains Mono / Orbitron depending on vibe */
+  font-size: 1.5rem;
+  font-weight: 1000;
+  color: #ffae00;
+  font-style: bold;
+  /* light gray for contrast */
+  margin: 0;
+  flex: 1;
+}
+
+.task-button {
+  background: rgba(0, 255, 200, 0.15);
+  border: none;
+  border-radius: 12px;
+  padding: 0.35rem 0.75rem;
+  color: #00ffc8;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.task-button:hover {
+  background: rgba(0, 255, 200, 0.3);
+  transform: scale(1.05);
+}
+
+.task-input {
+  width: 100%;
+  padding: 0.6rem 1rem;
+
+  background: rgba(255, 255, 255, 0.08);
+  /* glass effect */
+  color: #00ffc8;
+  /* light gray text */
+  border: 1px solid rgba(0, 255, 200, 0.3);
+  border-radius: 12px;
+
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+  outline: none;
+
+  transition: border 0.2s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.task-input::placeholder {
+  color: rgba(226, 232, 240, 0.6);
+  /* softer placeholder */
+}
+
+.task-input:focus {
+  border-color: #00ffc8;
+  background: rgba(0, 255, 200, 0.1);
+  box-shadow: 0 0 12px rgba(0, 255, 200, 0.5);
+}
+
+.task-summary {
+  font-size: 1rem;
+  color: #ffbb00;
+  /* medium gray */
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}

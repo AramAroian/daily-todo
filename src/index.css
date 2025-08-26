@@ -1,0 +1,28 @@
+body {
+  background: linear-gradient(270deg,#0d1117, #1a1f2b, #141821);
+  background-size: 600% 600%;
+  animation: gradientShift 120s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+}

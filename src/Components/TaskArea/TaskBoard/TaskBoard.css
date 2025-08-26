@@ -1,0 +1,47 @@
+.task-board {
+  width: 100%;
+
+  display: grid;
+  grid-template-rows: repeat(auto-fit, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+
+.task-btn {
+  background: rgba(0, 255, 200, 0.12); /* glassy neon tint */
+  color: #00ffc8; /* neon text */
+  border: 1px solid rgba(0, 255, 200, 0.4);
+  border-radius: 12px;
+
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif; /* or Orbitron for futuristic */
+  cursor: pointer;
+
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 8px rgba(0, 255, 200, 0.2);
+  transition: 
+    transform 0.2s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+.task-btn:hover {
+  background: rgba(0, 255, 200, 0.25);
+  box-shadow: 0 0 16px rgba(0, 255, 200, 0.6);
+  transform: translateY(-2px) scale(1.03);
+}
+
+.task-btn:active {
+  transform: scale(0.98);
+  box-shadow: 0 0 6px rgba(0, 255, 200, 0.3);
+}
+
+.task-board-actions {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}

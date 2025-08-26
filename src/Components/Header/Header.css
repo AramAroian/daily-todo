@@ -1,0 +1,9 @@
+header {
+  display: flex;
+  justify-self: start;
+}
+
+header img {
+  height: 10rem;
+  justify-items: start;
+}

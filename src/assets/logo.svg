@@ -1,0 +1,32 @@
+<svg
+xmlns="http://www.w3.org/2000/svg"
+role="img"
+aria-labelledby="title desc"
+viewBox="0 0 600 160"
+>
+<title id="title">Daily — Logo</title>
+<desc id="desc">Futuristic wordmark with a cyan-to-purple linear gradient fill.</desc>
+
+
+<defs>
+<!-- Gradient: cyan → purple -->
+<linearGradient id="dailyGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+<stop offset="0%" stop-color="#00ffc8"/> <!-- cyan-500 -->
+<stop offset="100%" stop-color="#8b5cf6"/> <!-- violet-500 -->
+</linearGradient>
+</defs>
+
+
+<!-- Wordmark -->
+<text
+x="20"
+y="112"
+fill="url(#dailyGradient)"
+font-family="'Orbitron', 'Eurostile', 'Exo 2', 'Rajdhani', sans-serif"
+font-weight="700"
+font-size="96"
+letter-spacing="2"
+>
+Daily
+</text>
+</svg>
