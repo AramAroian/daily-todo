@@ -1,69 +1,97 @@
-# React + TypeScript + Vite
+# Daily To Do
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, minimalistic daily task manager built with React, TypeScript, and Vite.  
+Features drag-and-drop task sorting, CSV export, and a glassmorphic UI.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Add, edit, activate/pause, complete, and delete tasks
+- Track active work time per task
+- Drag and drop to reorder tasks (powered by [dnd-kit](https://github.com/clauderic/dnd-kit))
+- Export tasks to CSV
+- Responsive, glassmorphic design
 
-## Expanding the ESLint configuration
+## Future Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Functional backend (user authentication, persistent storage)
+- Filter tasks (by status, date, priority)
+- Completed tasks section (view and manage finished tasks)
+- Outlook integration (sync tasks with Microsoft Outlook)
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## Getting Started
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Prerequisites
+
+- Node.js (v18+ recommended)
+- npm
+
+### Installation
+
+```sh
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Development
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Start the development server:
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```sh
+npm run dev
 ```
+
+Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+### Build
+
+To build for production:
+
+```sh
+npm run build
+```
+
+### Lint
+
+To run ESLint:
+
+```sh
+npm run lint
+```
+
+## Project Structure
+
+```
+src/
+  App.tsx           # Main app component
+  App.css           # App layout styles
+  index.css         # Global styles
+  main.tsx          # Entry point
+  Components/
+    Header/         # App header
+    TaskArea/
+      TaskBoard/    # Task board & drag/drop
+      TaskCard/     # Individual task cards
+  models/
+    TaskModel.ts    # Task data model
+  Utils/
+    ExportTasks.ts  # CSV export utility
+public/
+  logo.svg          # App logo
+  vite.svg          # Vite logo
+```
+
+## Technologies
+
+- React 19
+- TypeScript
+- Vite
+- dnd-kit (drag-and-drop)
+- CSS (glassmorphism, responsive grid)
+
+## License
+
+MIT
+
+---
+
+Made with ❤️ for learning and productivity.
